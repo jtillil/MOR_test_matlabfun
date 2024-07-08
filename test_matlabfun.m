@@ -21,7 +21,7 @@ jacfun_matlabfun = model.jacfun;
 
 %% time text coded ode function
 
-N = 10000;
+N = 100000;
 
 tic
 for i = 1:N
@@ -29,11 +29,9 @@ for i = 1:N
 end
 fprintf("file ode function\n")
 toc
-% 8 sec
+% 7.3 sec
 
 %% time text coded ode function with supplying I instead of model
-
-N = 10000;
 
 tic
 for i = 1:N
@@ -41,7 +39,7 @@ for i = 1:N
 end
 fprintf("\nfile ode function supplying I instead of model (smaller variable to RAM)\n")
 toc
-% 8 sec
+% 7.4 sec
 
 %% time symbolically coded matlabfunction ode function
 
@@ -51,7 +49,7 @@ for i = 1:N
 end
 fprintf("\nmatlabfun ode function\n")
 toc
-% 0.04 sec
+% 0.037 sec
 % !!! 200 times faster !!!
 
 %% check
@@ -61,7 +59,7 @@ toc
 
 %% time jacobian vs fast jacobian
 
-N = 100;
+N = 10000;
 
 tic
 for i = 1:N
@@ -69,7 +67,7 @@ for i = 1:N
 end
 fprintf("\nfile jac function\n")
 toc
-% N = 1000: 10.8 sec
+% N = 10000: 3.5 sec
 
 tic
 for i = 1:N
@@ -77,7 +75,8 @@ for i = 1:N
 end
 fprintf("\nmatlabfun jac function\n")
 toc
-% N = 1000: 5.1 sec
+% N = 10000: 0.24 sec
+% !!! 10 times faster !!!
 
 %% try pss coding
 
