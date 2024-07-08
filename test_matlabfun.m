@@ -54,7 +54,7 @@ toc
 
 %% check
 
-% error = res1 - res2;
+% error = (res1 - res2) ./ res2;
 % 0
 
 %% time jacobian vs fast jacobian
